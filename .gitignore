@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Assignment question files (not for submission)
+**/question.md
+**/questio.md
