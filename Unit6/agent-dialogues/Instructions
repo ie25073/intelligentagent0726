@@ -1,0 +1,10 @@
+Activity Guidance
+Create an agent dialogue, using KQML and KIF, between two agents (named Alice and Bob).
+
+Alice is an agent designed to procure stock and Bob is an agent that controls the stock levels for a warehouse. This dialogue should see Alice asking Bob about the available stock of 50 inch televisions, and also querying the number of HDMI slots the televisions have.
+
+Add your completed answers to your e-Portfolio.
+
+Learning Outcomes
+An understanding of the motivations for, and appropriate use of, agent-based computing.
+An understanding of the main agent models in use today and their grounding in artificial intelligence research.
