@@ -1,0 +1,45 @@
+[
+  {
+    "agent": "planning",
+    "action": "created_plan",
+    "task_count": 3
+  },
+  {
+    "agent": "orchestrator",
+    "action": "started_cycle",
+    "cycle": 1
+  },
+  {
+    "agent": "retrieval",
+    "action": "completed_search",
+    "query": "Explainable decisions in autonomous research agents evidence",
+    "result_count": 3
+  },
+  {
+    "agent": "retrieval",
+    "action": "completed_search",
+    "query": "Explainable decisions in autonomous research agents methods",
+    "result_count": 3
+  },
+  {
+    "agent": "retrieval",
+    "action": "completed_search",
+    "query": "Explainable decisions in autonomous research agents risks limitations",
+    "result_count": 3
+  },
+  {
+    "agent": "processing",
+    "action": "ranked_evidence",
+    "retained_count": 3
+  },
+  {
+    "agent": "orchestrator",
+    "action": "sufficiency_reached",
+    "cycle": 1
+  },
+  {
+    "agent": "storage",
+    "action": "saved_outputs",
+    "files": 3
+  }
+]

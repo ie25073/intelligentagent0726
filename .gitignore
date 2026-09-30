@@ -1,4 +1,9 @@
-# macOS
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/# macOS
 .DS_Store
 
 # Assignment question files (not for submission)

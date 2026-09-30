@@ -1,0 +1,19 @@
+Hi Panagiotis,
+
+I agree with your argument that the ethical challenge of generative AI is sociotechnical rather than purely technical. This complements my initial post, particularly my concerns about bias, reliability, consent, and the need for meaningful human oversight. Your point that increasing model scale does not automatically eliminate bias is especially important because the underlying problem may originate from the composition and representation of the training data itself (Bender et al., 2021).
+
+I also found your discussion of memorisation particularly useful. Carlini et al. (2023) show that diffusion models can reproduce examples from their training data, which strengthens the concern that generated content cannot always be assumed to be completely novel. From a preventative perspective, I think this requires safeguards before and after model training. Dataset provenance, consent mechanisms, and sensitive-data filtering should be considered before training, while output monitoring and mechanisms for reporting reproduced material should remain available after deployment.
+
+Your discussion of misinformation also connects with my concern about information integrity. I would add that provenance information alone may not be sufficient because users may ignore or misunderstand warnings. NIST (2024) therefore supports a broader risk-management approach involving testing, monitoring, and human oversight.
+
+I particularly agree with your suggestion of stronger controls for high-impact applications. However, these controls should be continuous rather than limited to deployment. Models and their operating environments can change, so periodic evaluation for bias, privacy leakage, and harmful outputs should form part of responsible deployment.
+
+Overall, your post reinforces the need to treat ethical safeguards as part of the entire AI lifecycle rather than as controls added after development.
+
+References
+
+Bender, E.M., Gebru, T., McMillan-Major, A. and Shmitchell, S. (2021) ‘On the dangers of stochastic parrots: Can language models be too big?’, Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pp. 610–623. doi:10.1145/3442188.3445922.
+
+Carlini, N. et al. (2023) ‘Extracting training data from diffusion models’, 32nd USENIX Security Symposium, pp. 5253–5270.
+
+National Institute of Standards and Technology (NIST) (2024) Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile. NIST AI 600-1. Gaithersburg, MD: NIST.

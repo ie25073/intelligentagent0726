@@ -1,0 +1,13 @@
+
+Frederick, I agree with your argument that generative AI should be treated as a thought partner rather than an unquestioned authority. The findings you cite from Mugaanyi et al. (2024) reinforce this point: even where many generated references are genuine, reliability is still insufficient for users to assume that every citation or claim is trustworthy. In academic work, verifying the original source should therefore remain a deliberate step rather than an optional safeguard.
+
+Regarding your question about using a feedback loop from a diverse user group to address bias, I think this could be valuable, but it should form only one layer of a broader approach. Diverse users may identify stereotypes, exclusions or harmful outputs that developers did not anticipate. However, feedback itself can become biased if some groups are underrepresented, less likely to report problems, or their concerns are given less weight. I would therefore combine diverse-user feedback with representative evaluation datasets, subgroup testing, documented bias assessments and periodic independent review. This would make the process systematic rather than simply reactive.
+
+I also agree with your risk-ranked approach. Stronger controls for high-impact uses such as fraud, misinformation and academic decision-making could preserve innovation while concentrating oversight where potential harm is greatest. However, lower-risk applications should not be treated as risk-free because small biases can become normalised when reproduced at scale.
+Overall, I see continuous testing, diverse feedback and proportionate human oversight as complementary safeguards rather than alternatives.
+
+References
+
+Mugaanyi, J. et al. (2024) ‘Evaluation of large language model performance and reliability for citations and references in scholarly writing: Cross-disciplinary study’, Journal of Medical Internet Research, 26. doi:10.2196/52935.
+
+National Institute of Standards and Technology (NIST) (2024) Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile. NIST AI 600-1. Gaithersburg, MD: NIST.

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "https://openalex.org/W1",
+    "doi": "https://doi.org/10.1000/agent.1",
+    "title": "Explainable planning for autonomous research agents",
+    "publication_year": 2024,
+    "cited_by_count": 42,
+    "authorships": [{"author": {"display_name": "A. Researcher"}}],
+    "primary_location": {"landing_page_url": "https://example.org/agent-1"},
+    "abstract_inverted_index": {
+      "Explainable": [0], "planning": [1], "improves": [2], "human": [3],
+      "oversight": [4], "of": [5], "autonomous": [6], "research": [7], "agents.": [8]
+    }
+  },
+  {
+    "id": "https://openalex.org/W2",
+    "doi": "https://doi.org/10.1000/agent.2",
+    "title": "Evaluating evidence retrieval in multi-agent systems",
+    "publication_year": 2023,
+    "cited_by_count": 18,
+    "authorships": [{"author": {"display_name": "B. Analyst"}}],
+    "primary_location": {"landing_page_url": "https://example.org/agent-2"},
+    "abstract_inverted_index": {
+      "Evaluation": [0], "measures": [1], "retrieval": [2], "relevance": [3],
+      "citation": [4], "validity": [5], "and": [6], "safe": [7], "abstention.": [8]
+    }
+  },
+  {
+    "id": "https://openalex.org/W3",
+    "doi": "https://doi.org/10.1000/agent.3",
+    "title": "Risks and limitations of language-model research assistants",
+    "publication_year": 2025,
+    "cited_by_count": 7,
+    "authorships": [{"author": {"display_name": "C. Scholar"}}],
+    "primary_location": {"landing_page_url": "https://example.org/agent-3"},
+    "abstract_inverted_index": {
+      "Research": [0], "assistants": [1], "can": [2], "fabricate": [3],
+      "citations": [4], "without": [5], "provenance": [6], "checks.": [7]
+    }
+  }
+]

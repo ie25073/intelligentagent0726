@@ -1,0 +1,11 @@
+Group Project C E-Portfolio Reflection
+
+My participation in the Group C project has focused primarily on the development methodology and the identification of appropriate tools, frameworks, APIs, models and implementation environment for the proposed Academic Research Agent system.
+
+An important aspect of the activity has been the collaborative refinement of the proposed design. My initial contribution suggested an iterative Agile prototyping methodology. However, discussion with the group highlighted that the assignment is primarily concerned with designing an academic research tool rather than managing an Agile software development project. I therefore revised the methodology towards an architecture-first, design-oriented approach that concentrates on requirements, agent responsibilities, interfaces, data flows and evaluation criteria.
+
+The team discussions also influenced several technical decisions. For example, the initial proposal to use SQLite for storing agent journals and outputs was simplified to JSON to maintain a lightweight design appropriate to the scope of the project. Feedback also highlighted the importance of avoiding unnecessary dependency on specific development tools or AI providers. Consequently, references to Visual Studio Code and GitHub as architectural requirements were removed, while the LLM layer was redesigned to remain provider-agnostic, allowing models such as Mistral or Qwen to be accessed through different local or hosted interfaces.
+
+I also reviewed the proposed use of LangGraph, Pydantic, HTTPX, Tenacity, arXiv, OpenAlex and CORE and strengthened the contribution by adding supporting academic and technical references.
+
+This activity reinforced the importance of peer review, design simplicity and technology independence when developing multi-agent architectures. I learned that architectural decisions should be justified primarily by system requirements rather than personal technology preferences. The discussions also demonstrated how constructive team feedback can improve clarity, academic rigour and consistency across individual contributions.
