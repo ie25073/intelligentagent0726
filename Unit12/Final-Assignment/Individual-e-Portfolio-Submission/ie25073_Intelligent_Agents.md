@@ -1,14 +1,6 @@
 ---
 title: "Intelligent Agents: Individual e-Portfolio Submission"
-author: "Imoh Etuk (ie25073)"
-date: "30 September 2026"
 ---
-
-**E-portfolio URL:** https://ie25073.github.io/
-
-**Module repository:** https://github.com/ie25073/intelligentagent0726
-
-**Student email:** ie25073@essex.ac.uk
 
 # Portfolio Narrative
 
@@ -26,7 +18,7 @@ Units 9–11 focused on deep learning, ethics and deployment. My discussion trac
 
 The Group C project designed an Academic Research Agent. My recorded individual contribution concerned development methodology and selection of frameworks, APIs and models. I initially proposed Agile prototyping, SQLite and named development tools. Team discussion showed that the assessed task needed an architecture-first account of responsibilities, interfaces, data flow and evaluation. I revised my contribution accordingly, supported replacing SQLite with lightweight JSON, removed tools from architectural requirements and helped make the LLM layer provider-agnostic. I also reviewed LangGraph, Pydantic, HTTPX, Tenacity, arXiv, OpenAlex and CORE and added supporting sources. This evidence demonstrates that I responded constructively to peers rather than defending familiar choices.
 
-The Unit 11 implementation realises that design as four cooperating components. A planning agent converts a goal into bounded search tasks; a retrieval agent queries OpenAlex or an offline fixture; a processing agent normalises, deduplicates and ranks records; and a storage agent writes Markdown, JSON and an execution trace. Ollama supplies optional LLM planning, but schema validation and deterministic fallback prevent malformed model output from controlling execution. Seven automated tests cover validation, planning bounds, model failure, retrieval, ranking, persistence, evidence sufficiency and the cycle limit. The reproducible demonstration retained three evidence records and generated all expected outputs. These results demonstrate software behaviour, not the scholarly quality of a real literature review.
+The Unit 11 implementation realises that design as four cooperating components. A planning agent converts a goal into bounded search tasks; a retrieval agent queries OpenAlex or an offline fixture; a processing agent normalises, deduplicates and ranks records; and a storage agent writes Markdown, JSON and an execution trace. Ollama supplies optional LLM planning, but schema validation and deterministic fallback prevent malformed model output from controlling execution. Eight automated tests cover validation, planning bounds, model failure, retrieval, ranking, persistence, evidence sufficiency, the cycle limit and the executable command-line path. The reproducible demonstration retained three evidence records and generated all expected outputs. These results demonstrate software behaviour, not the scholarly quality of a real literature review.
 
 ## Learning outcomes
 
@@ -66,7 +58,7 @@ The Unit 11 implementation realises that design as four cooperating components. 
 | Skill | Evidence developed | Current evaluation | Action |
 |---|---|---|---|
 | Critical analysis | Three discussion summaries and design critique | Stronger at comparing trade-offs than at the module start | Quantify comparisons with explicit evaluation criteria |
-| Software engineering | Modular Python, typed models, CLI and seven tests | Reproducible core with clear boundaries | Add integration tests for live API failure modes |
+| Software engineering | Modular Python, typed models, CLI and eight tests | Reproducible core with clear boundaries | Add integration tests for live API failure modes |
 | Research | Reading summaries, scholarly APIs and referenced discussions | Improved provenance awareness | Build a manually labelled relevance dataset |
 | Teamwork | Peer responses and revision of Group C contribution | Demonstrated responsiveness to criticism | Record decisions and ownership during future meetings |
 | Ethical awareness | Risk discussion, three case studies and safety controls | Able to translate principles into controls | Add bias, privacy and prompt-injection checks before deployment |
@@ -80,7 +72,7 @@ The Unit 11 implementation realises that design as four cooperating components. 
 
 ## What?
 
-My central project was an Academic Research Agent that receives a research goal, plans searches, retrieves scholarly metadata, processes the results and stores an inspectable report. The implemented workflow separates planning, retrieval, processing and storage. It supports Ollama for language-model planning and OpenAlex for live evidence retrieval, while deterministic planning and an offline fixture make execution reproducible when a model or network is unavailable. Seven automated tests passed, and the demonstration generated a Markdown report, JSON evidence and a workflow trace.
+My central project was an Academic Research Agent that receives a research goal, plans searches, retrieves scholarly metadata, processes the results and stores an inspectable report. The implemented workflow separates planning, retrieval, processing and storage. It supports Ollama for language-model planning and OpenAlex for live evidence retrieval, while deterministic planning and an offline fixture make execution reproducible when a model or network is unavailable. Eight automated tests passed, and the demonstration generated a Markdown report, JSON evidence and a workflow trace.
 
 The project brought together a sequence of module activities. Early discussion led me to see autonomy as bounded delegation rather than unrestricted independent action. The KQML/KIF exercise demonstrated that communication has layers: a performative can state intent, formal content can encode a proposition, and identifiers can preserve conversational context. The constituency trees then showed that a valid representation may still permit competing interpretations. Later work on deep learning and responsible AI connected these technical uncertainties with provenance, bias, privacy, oversight and accountability.
 
@@ -97,6 +89,8 @@ Communication work produced a related insight. KQML can communicate intention, b
 My view of explainability also became more critical. Recording a trace improves accountability because it exposes queries, failures and stop decisions. Yet a transparent keyword score can still be biased, and a DOI can identify a real paper without proving that it supports a generated claim. Walters and Wilder’s (2023) findings on fabricated citations made this risk concrete, while NIST’s (2024) lifecycle approach showed why one test result cannot guarantee responsible deployment. I learned to distinguish software correctness, information quality and fitness for use. The offline tests establish the first; they do not establish the other two.
 
 The strongest evidence of my technical development is the path from a design contribution to executable, tested components. I can now define agent boundaries, inject replaceable dependencies, validate model output, design deterministic fallbacks and capture execution evidence. My weakest area remains empirical evaluation. The current ranking uses transparent proxies rather than a labelled relevance dataset, and I did not conduct a user study. Acknowledging these limits is more useful than overstating the prototype as a complete systematic-review tool.
+
+Final verification exposed another important lesson. The stored test record claimed seven tests, but the first clean discovery run found only five because two intended model-contract tests had not been saved. I corrected the discrepancy, added a command-line functional test and regenerated the evidence. This incident showed me that documentation can drift from executable reality. I now regard a fresh, independently repeatable validation run as part of the deliverable rather than a final administrative check.
 
 Team participation also altered my working practice. My peer responses across the three discussions did more than confirm agreement: they introduced coordination risk, ontology alignment, representative testing, privacy and provenance into my conclusions. In Group C, simplifying storage and decoupling providers resulted from collaborative review. I learned that effective virtual teamwork requires visible reasoning and a willingness to update decisions. In future, I would strengthen this by maintaining a decision log that records options, evidence, owners and acceptance criteria, making contribution and accountability easier to evaluate.
 
@@ -130,5 +124,3 @@ Wooldridge, M.J. and Jennings, N.R. (1995) 'Intelligent agents: theory and pract
 - Units 9-11: Collaborative Discussion 3 posts, ethical additional task and Unit 9 reflection.
 - Group project: Design proposal, peer evaluation and individual team-discussion reflection.
 - Unit 11: Academic Research Agent source, tests, README, execution evidence, presentation and transcript.
-
-**Submission note:** Verify this account against your own experience and the University's current guidance on declaring AI assistance before submission to Turnitin.

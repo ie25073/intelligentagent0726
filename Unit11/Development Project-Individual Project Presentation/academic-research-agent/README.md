@@ -33,6 +33,13 @@ The workflow uses explicit typed messages and dependency injection instead of a 
 - Optional: Ollama and a locally available model such as Qwen for LLM planning.
 - No Python packages outside the standard library.
 
+## External services, models and test data
+
+- **OpenAlex API:** supplies live scholarly metadata. OpenAlex coverage and metadata remain subject to its terms and documented limitations.
+- **Ollama:** optional local model runtime used only for planning. The example configuration names Qwen, but no model weights are bundled or represented as original work.
+- **Python standard library:** provides HTTP, JSON, command-line and file-handling functionality; no third-party Python framework or library is required.
+- **Offline fixture:** the bundled records use reserved example identifiers and fictional authors. They are synthetic regression-test data, not publications, and must not be cited as academic evidence.
+
 ## Run
 
 From this directory, run a deterministic offline demonstration:
@@ -114,4 +121,4 @@ The implementation uses the public OpenAlex API and supports the Ollama API. Its
 - Russell, S. and Norvig, P. (2021) *Artificial Intelligence: A Modern Approach*. 4th edn. Harlow: Pearson.
 - Wooldridge, M. (2009) *An Introduction to MultiAgent Systems*. 2nd edn. Chichester: Wiley.
 
-No model-generated text is used in the bundled fixture or expected test results.
+No model-generated text is used in the bundled fixture or expected test results. The fixture is synthetic and is included only to demonstrate reproducible software behaviour.

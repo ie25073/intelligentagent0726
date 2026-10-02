@@ -8,6 +8,6 @@ test_offline_run_persists_report_and_trace (test_workflow.ResearchWorkflowTests.
 test_stops_after_configured_cycles_when_evidence_is_insufficient (test_workflow.ResearchWorkflowTests.test_stops_after_configured_cycles_when_evidence_is_insufficient) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 2.016s
+Ran 8 tests in 0.096s
 
 OK

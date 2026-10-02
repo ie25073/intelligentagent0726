@@ -28,6 +28,8 @@ def main() -> int:
         if arguments.planner == "ollama"
         else RuleBasedPlanner()
     )
+    # Provider selection stays at the composition boundary so offline evidence,
+    # tests and live execution exercise the same workflow implementation.
     retriever = (
         FixtureRetriever(project_root / "tests" / "fixtures" / "openalex.json")
         if arguments.offline

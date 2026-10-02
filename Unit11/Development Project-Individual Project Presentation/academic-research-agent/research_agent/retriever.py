@@ -19,6 +19,8 @@ class Retriever(Protocol):
 def _abstract_from_index(index: dict[str, list[int]] | None) -> str:
     if not index:
         return ""
+    # OpenAlex exposes abstracts as inverted indexes. Reconstructing that source
+    # text avoids asking a model to generate a potentially unsupported summary.
     positioned_words = (
         (position, word)
         for word, positions in index.items()
@@ -39,6 +41,8 @@ def _normalise_work(record: dict[str, Any], query: str) -> Work:
         or record.get("id")
         or ""
     )
+    # Preserve both provenance and the discovery query so a reviewer can trace
+    # why each record entered the evidence set.
     return Work(
         title=record.get("title") or "Untitled work",
         authors=authors,
