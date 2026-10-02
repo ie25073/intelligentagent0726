@@ -2,7 +2,7 @@
 
 ## Slide 1 - Academic Research Agent
 
-This presentation demonstrates my implementation of the Group C design proposal: an academic research agent that turns a high-level research goal into a structured set of scholarly evidence. I implemented it as a bounded multi-agent workflow because the problem has distinct responsibilities that benefit from explicit interfaces. My priorities were autonomous planning, reproducibility, source provenance and safe failure. The implementation uses only the Python standard library, with OpenAlex for live retrieval and Ollama as an optional local language-model provider.
+This presentation demonstrates my implementation of the Group C design proposal: an academic research agent that turns a high-level research goal into a structured set of scholarly evidence. I implemented it as a bounded multi-agent workflow because the problem has distinct responsibilities that benefit from explicit interfaces. My priorities were autonomous planning, reproducibility, source provenance and safe failure. Following Peffers and colleagues, I treated the software as a Design Science artefact whose claims must be evaluated against explicit objectives. The implementation uses only the Python standard library, with OpenAlex for live retrieval and Ollama as an optional local language-model provider.
 
 ## Slide 2 - Problem and design requirements
 
@@ -10,7 +10,7 @@ The system addresses the time-consuming first stage of academic research: transl
 
 ## Slide 3 - From proposal to implementation
 
-This table shows how the team design became executable software. The provider-agnostic model layer is represented by an Ollama planner behind a simple planning interface. If Ollama is absent, deterministic planning preserves system availability. OpenAlex provides live scholarly metadata, while a fixture provides repeatable testing and demonstration. Four components implement the proposed planning, retrieval, processing and storage responsibilities. JSON was retained from the revised group design because it is lightweight and inspectable. Iterative retrieval is implemented through an evidence-sufficiency decision with an explicit three-cycle maximum.
+This table distinguishes architectural fidelity from technology substitution. The provider-agnostic model layer is represented by an Ollama planner behind a simple planning interface, and the CLI can name another compatible model. OpenAlex is the implemented live provider; arXiv and CORE remain extension points rather than completed connectors. Four components preserve the proposed planning, retrieval, processing and storage responsibilities. I replaced LangGraph, Pydantic, HTTPX and Tenacity with standard-library protocols, dataclasses and HTTP calls. This reduces installation risk while retaining explicit state, schemas and the three-cycle loop, but it also means asynchronous retrieval and exponential back-off are not implemented.
 
 ## Slide 4 - System architecture
 
@@ -18,7 +18,7 @@ The user supplies one research goal. The planning agent creates typed search tas
 
 ## Slide 5 - Planning and autonomous behaviour
 
-Autonomy is demonstrated by the transition from one goal to a sequence of actions without the user specifying each query. The Ollama prompt requests between two and five tasks in a strict JSON shape. The response is parsed and validated before execution. Malformed output or an unavailable endpoint is not trusted; the planner falls back to transparent query templates. After retrieval, the workflow evaluates whether enough unique records exist and either stops or performs another cycle. The maximum cycle count is a practical kill switch that prevents an accidental or model-driven infinite loop.
+Autonomy is demonstrated by the transition from one goal to a sequence of actions without the user specifying each query. The Ollama prompt requests between two and five tasks in a strict JSON shape. The response is parsed and validated before execution. Malformed output or an unavailable endpoint is not trusted; the planner falls back to transparent query templates. After retrieval, the workflow evaluates whether enough unique records exist and either stops or performs another cycle. This is bounded workflow autonomy: the planner proposes actions and the orchestrator decides whether to continue, while retrieval, processing and storage are deterministic specialists rather than independent goal-seeking agents. The three-cycle limit is a practical kill switch.
 
 ## Slide 6 - Evidence retrieval and processing
 
@@ -26,11 +26,11 @@ The retrieval agent maps OpenAlex results into a consistent internal record. It 
 
 ## Slide 7 - Explainability and responsible design
 
-Explainability is implemented as evidence, not merely as a claim. The workflow trace records the generated plan, each retrieval, result counts, failures, sufficiency decisions and the reason execution stopped. This allows a reviewer to reconstruct the system's actions. Provenance helps address hallucinated citation risk because records retain links to their source. Nevertheless, the agent is a research aid rather than an autonomous author. OpenAlex can omit material, abstracts may be missing and citation counts can disadvantage recent work. A researcher must therefore inspect sources and confirm that they support downstream claims.
+Explainability is implemented as evidence, not merely as a claim. The workflow trace records the generated plan, each retrieval, result counts, failures, sufficiency decisions and the reason execution stopped. This allows a reviewer to reconstruct the system's actions. Provenance helps address hallucinated citation risk because records retain links to their source. Schema validation rejects malformed model output, although it is not a complete defence against semantically valid prompt injection. The agent is therefore a research aid rather than an autonomous author. OpenAlex can omit material, abstracts may be missing and citation counts can disadvantage recent work, so a researcher must inspect sources and claims.
 
 ## Slide 8 - Testing strategy and results
 
-I used eight automated tests at component, workflow and functional levels. Planner tests verify minimum goal quality, bounded and distinct tasks, acceptance of a schema-conforming model response, and fallback when the model endpoint fails. Processing tests verify duplicate removal and ranking order. Workflow tests inspect persisted outputs, evidence sufficiency and the cycle limit. A subprocess test runs the actual command-line entry point and verifies all three generated files. All eight tests passed with Python 3.13.7. The fixture separates code regressions from changing API data, internet availability and model nondeterminism.
+I used eight automated tests at component, workflow and functional levels. Planner tests verify minimum goal quality, two-to-five valid tasks, acceptance of schema-conforming model output and fallback when the endpoint fails. Processing tests verify duplicate removal and ranking order. Workflow tests enforce the three-cycle ceiling, while a subprocess test requires exactly three generated files. All eight tests passed with Python 3.13.7. These are explicit software pass criteria. The fixture separates regressions from network and model nondeterminism, but it is synthetic and cannot establish real-world retrieval quality.
 
 ## Slide 9 - Demonstration evidence
 
@@ -38,7 +38,7 @@ The demonstration command runs the complete workflow offline for the goal shown 
 
 ## Slide 10 - Critical evaluation and conclusion
 
-The main strengths are modularity, reproducibility, provenance, graceful fallback and bounded autonomy. The principal weakness is that keyword overlap is a limited proxy for semantic relevance, while citation counts can encode age and visibility bias. The fixture validates software behaviour but not the quality of live literature selection, and I did not conduct a user study. Future evaluation should use a manually labelled relevance set, precision and recall, DOI checks, model comparisons and adversarial prompt tests. Overall, the system fulfils the goal-plan-act-output requirement while preserving meaningful human oversight.
+The main strengths are modularity, reproducibility, provenance, graceful fallback and bounded autonomy. The principal weakness is that keyword overlap is a limited proxy for semantic relevance, citation counts encode age and visibility bias, and only OpenAlex is implemented as a live source. The fixture validates software behaviour but not literature quality. In response to the design feedback, the next evaluation should pre-register labelled queries and report precision at k and nDCG at k, DOI resolution, abstract-to-source agreement and appropriate abstention. Model comparison should report median and 95th-percentile latency, peak memory, token use and monetary cost for selected Qwen, Mistral and Llama variants. I make no benchmark claim for the illustrative qwen3:4b default.
 
 ## References
 
@@ -47,6 +47,8 @@ Bandi, A. et al. (2025) 'The rise of agentic AI: a review of definitions, framew
 Lewis, P. et al. (2020) 'Retrieval-augmented generation for knowledge-intensive NLP tasks', *Advances in Neural Information Processing Systems*, 33, pp. 9459-9474.
 
 OpenAlex (no date) *API documentation*. Available from: https://docs.openalex.org/ [Accessed 30 September 2026].
+
+Peffers, K., Tuunanen, T., Rothenberger, M.A. and Chatterjee, S. (2007) 'A design science research methodology for information systems research', *Journal of Management Information Systems*, 24(3), pp. 45-77. https://doi.org/10.2753/MIS0742-1222240302.
 
 Russell, S. and Norvig, P. (2021) *Artificial Intelligence: A Modern Approach*. 4th edn. Harlow: Pearson.
 

@@ -13,14 +13,16 @@ date: "30 September 2026"
 - Preserve source provenance and expose workflow decisions
 - Remain usable without paid services or credentials
 - Bound retries and fail safely when a model or network is unavailable
+- Design Science frames the artefact and its evaluation (Peffers *et al.*, 2007)
 
 # From proposal to implementation
 
 | Design proposal | Implemented decision |
 |---|---|
 | Provider-agnostic LLM layer | Optional Ollama planner plus deterministic fallback |
-| Scholarly search APIs | OpenAlex API and reproducible offline fixture |
+| arXiv, OpenAlex and CORE connectors | OpenAlex implemented; other connectors remain future work |
 | Multi-agent responsibilities | Four typed components with explicit hand-offs |
+| LangGraph, Pydantic, HTTPX, Tenacity | Standard-library protocols and typed dataclasses minimise dependencies |
 | Lightweight journal/output | Markdown report, JSON evidence and JSON trace |
 | Iterative retrieval | Sufficiency check with a maximum of three cycles |
 
@@ -47,6 +49,7 @@ Storage agent ----- report.md + evidence.json + trace.json
 - Invalid or unavailable model output triggers a transparent rule-based plan
 - The workflow executes tasks, evaluates evidence sufficiency and may refine
 - A cycle limit acts as a kill switch against uncontrolled agent loops
+- Autonomy is bounded at workflow level; deterministic specialists are not independent goal-seeking agents
 
 ```bash
 python3 -m research_agent "Explainable decisions in autonomous research agents" --offline
@@ -69,6 +72,7 @@ python3 -m research_agent "Explainable decisions in autonomous research agents" 
 - No credentials, personal data or fabricated bibliography are stored
 - Human oversight remains necessary for relevance, source quality and claim support
 - Risks remain: coverage gaps, missing abstracts and citation-age bias
+- Schema validation reduces malformed output risk but is not a complete prompt-injection defence
 
 # Testing strategy and results
 
@@ -78,6 +82,8 @@ python3 -m research_agent "Explainable decisions in autonomous research agents" 
 - Workflow tests: persisted outputs, sufficiency decision and cycle bound
 - CLI test: executable entry point and all three generated outputs
 - Offline fixture makes regression tests independent of network and model availability
+
+**Pass criteria:** 2-5 valid tasks; no more than 3 cycles; deterministic fallback; duplicate suppression; exactly 3 output files.
 
 ```text
 Ran 8 tests
@@ -100,18 +106,15 @@ Generated artefacts:
 
 # Critical evaluation and next steps
 
-**Strengths:** modular boundaries, reproducibility, provenance, graceful fallback and bounded autonomy.
+**Strengths:** modular, reproducible, traceable and bounded.
 
-**Limitations:** keyword ranking is semantically shallow; citation counts favour older work; the fixture proves behaviour rather than real-world source quality; no user study was performed.
+**Limits:** lexical ranking, age-biased citations, OpenAlex only, synthetic fixture and no model/user benchmark.
 
-**Next steps:** manually labelled relevance set, precision/recall measures, DOI verification, model comparison, prompt-injection tests and researcher usability evaluation.
+**Feedback-led evaluation:**
 
-**Selected references**
+- Labelled queries: P@$k$, nDCG@$k$, DOI/source validity and abstention
+- Models: p50/p95 latency, memory, tokens and cost
 
-Bandi, A. *et al.* (2025) ‘The rise of agentic AI’, *Future Internet*, 17(9), 404.
+**Conclusion:** goal-plan-act-output with human oversight.
 
-Lewis, P. *et al.* (2020) ‘Retrieval-augmented generation’, *NeurIPS*, 33, pp. 9459–9474.
-
-Russell, S. and Norvig, P. (2021) *Artificial Intelligence: A Modern Approach*. 4th edn. Pearson.
-
-OpenAlex (no date) *API documentation*. https://docs.openalex.org/
+**Sources:** Peffers *et al.* (2007); Lewis *et al.* (2020); Russell and Norvig (2021); Bandi *et al.* (2025). Full references: transcript/README.
