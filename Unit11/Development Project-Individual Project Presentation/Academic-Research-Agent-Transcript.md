@@ -1,11 +1,5 @@
 # Academic Research Agent: Presentation Transcript
 
-**Student:** Imoh Etuk (ie25073)
-
-**Presentation:** 10 slides
-
-**Date:** 30 September 2026
-
 ## Slide 1 - Academic Research Agent
 
 This presentation demonstrates my implementation of the Group C design proposal: an academic research agent that turns a high-level research goal into a structured set of scholarly evidence. I implemented it as a bounded multi-agent workflow because the problem has distinct responsibilities that benefit from explicit interfaces. My priorities were autonomous planning, reproducibility, source provenance and safe failure. The implementation uses only the Python standard library, with OpenAlex for live retrieval and Ollama as an optional local language-model provider.
