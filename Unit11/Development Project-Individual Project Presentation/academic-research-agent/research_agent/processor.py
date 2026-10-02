@@ -39,6 +39,8 @@ class ProcessingAgent:
         for work in works:
             text_tokens = _tokens(f"{work.title} {work.abstract}")
             overlap = len(goal_tokens & text_tokens) / max(1, len(goal_tokens))
+            # Citation count is capped and down-weighted so an older, highly
+            # cited paper cannot overwhelm direct lexical relevance.
             citation_signal = min(work.cited_by_count, 1000) / 10000
             scored_work = replace(
                 work,
@@ -46,6 +48,8 @@ class ProcessingAgent:
             )
             identity = (work.doi or work.title).casefold().strip()
             previous = best_by_identity.get(identity)
+            # Keeping only the strongest occurrence prevents repeated retrieval
+            # across queries from giving one publication artificial weight.
             if previous is None or scored_work.relevance_score > previous.relevance_score:
                 best_by_identity[identity] = scored_work
 

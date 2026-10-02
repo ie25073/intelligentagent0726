@@ -53,6 +53,8 @@ class OllamaPlanner:
         self._opener = opener
 
     def create_plan(self, goal: str) -> ResearchPlan:
+        # Build the fallback first so goal validation and degraded behaviour use
+        # the same transparent contract as a normal rule-based run.
         fallback = RuleBasedPlanner().create_plan(goal)
         prompt = (
             "Return JSON only with a tasks array containing 2-5 objects. "
@@ -89,4 +91,6 @@ class OllamaPlanner:
                 raise ValueError("Ollama returned an invalid number of tasks")
             return ResearchPlan(goal=fallback.goal, tasks=tasks)
         except (OSError, KeyError, TypeError, ValueError, json.JSONDecodeError):
+            # Model availability must not determine whether a demonstration can
+            # complete, and malformed model output must never reach retrieval.
             return fallback

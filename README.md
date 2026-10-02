@@ -6,8 +6,10 @@ This repository is Imoh Etuk's completed learning e-portfolio for Module 5, Inte
 
 ## Assessed Deliverables
 
-- [Unit 11 presentation source](Unit11/Development%20Project-Individual%20Project%20Presentation/Academic-Research-Agent-Presentation.md) and generated PowerPoint.
-- [Unit 11 narration transcript](Unit11/Development%20Project-Individual%20Project%20Presentation/Academic-Research-Agent-Transcript.md).
+- [Unit 11 technical report](Unit11/submission-ready%20files/ie25073_Academic_Research_Agent_Technical_Submission.docx).
+- [Unit 11 project README](Unit11/submission-ready%20files/README.md).
+- [Unit 11 presentation transcript](Unit11/submission-ready%20files/ie25073_Academic_Research_Agent_Transcript.docx).
+- [Unit 11 10-slide PowerPoint presentation](Unit11/submission-ready%20files/ie25073_Academic_Research_Agent_Presentation.pptx).
 - [Academic Research Agent](Unit11/Development%20Project-Individual%20Project%20Presentation/academic-research-agent/) with source, tests, README and execution evidence.
 - [Unit 12 individual e-portfolio submission](Unit12/Final-Assignment/Individual-e-Portfolio-Submission/ie25073_Intelligent_Agents.md) and generated Word document.
 

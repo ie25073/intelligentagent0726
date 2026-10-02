@@ -72,14 +72,15 @@ python3 -m research_agent "Explainable decisions in autonomous research agents" 
 
 # Testing strategy and results
 
-- Seven automated unit and workflow tests passed on Python 3.13.7
+- Eight automated unit, workflow and functional tests passed on Python 3.13.7
 - Planner tests: validation, bounded tasks, model schema and fallback
 - Processor test: duplicate removal and ranking order
 - Workflow tests: persisted outputs, sufficiency decision and cycle bound
+- CLI test: executable entry point and all three generated outputs
 - Offline fixture makes regression tests independent of network and model availability
 
 ```text
-Ran 7 tests in 0.004s
+Ran 8 tests
 OK
 ```
 

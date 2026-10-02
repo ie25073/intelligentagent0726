@@ -36,7 +36,7 @@ Explainability is implemented as evidence, not merely as a claim. The workflow t
 
 ## Slide 8 - Testing strategy and results
 
-I used seven automated tests at component and workflow levels. Planner tests verify minimum goal quality, bounded and distinct tasks, acceptance of a schema-conforming model response, and fallback when the model endpoint fails. Processing tests verify duplicate removal and ranking order. Workflow tests execute the complete offline route, inspect persisted outputs and verify both evidence sufficiency and the cycle limit. All seven tests passed with Python 3.13.7. The fixture is important because it separates code regressions from changing API data, internet availability and model nondeterminism.
+I used eight automated tests at component, workflow and functional levels. Planner tests verify minimum goal quality, bounded and distinct tasks, acceptance of a schema-conforming model response, and fallback when the model endpoint fails. Processing tests verify duplicate removal and ranking order. Workflow tests inspect persisted outputs, evidence sufficiency and the cycle limit. A subprocess test runs the actual command-line entry point and verifies all three generated files. All eight tests passed with Python 3.13.7. The fixture separates code regressions from changing API data, internet availability and model nondeterminism.
 
 ## Slide 9 - Demonstration evidence
 

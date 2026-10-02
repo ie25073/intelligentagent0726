@@ -1,3 +1,4 @@
+test_offline_command_completes_and_creates_all_outputs (test_cli.CommandLineFunctionalTests.test_offline_command_completes_and_creates_all_outputs) ... ok
 test_accepts_a_schema_conforming_model_plan (test_planner.OllamaPlannerTests.test_accepts_a_schema_conforming_model_plan) ... ok
 test_falls_back_when_the_model_is_unavailable (test_planner.OllamaPlannerTests.test_falls_back_when_the_model_is_unavailable) ... ok
 test_creates_bounded_distinct_tasks (test_planner.RuleBasedPlannerTests.test_creates_bounded_distinct_tasks) ... ok
@@ -7,6 +8,6 @@ test_offline_run_persists_report_and_trace (test_workflow.ResearchWorkflowTests.
 test_stops_after_configured_cycles_when_evidence_is_insufficient (test_workflow.ResearchWorkflowTests.test_stops_after_configured_cycles_when_evidence_is_insufficient) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.004s
+Ran 8 tests in 2.016s
 
 OK

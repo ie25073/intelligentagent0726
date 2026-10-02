@@ -49,6 +49,8 @@ class ResearchWorkflow:
         collected: list[Work] = []
         ranked: list[Work] = []
 
+        # The hard upper bound is a safety control: evidence scarcity may refine
+        # a search, but it cannot create an uncontrolled retrieval loop.
         for cycle in range(1, self.max_cycles + 1):
             trace.record("orchestrator", "started_cycle", cycle=cycle)
             refinement = "" if cycle == 1 else f" evaluation cycle {cycle}"
