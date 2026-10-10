@@ -1,5 +1,9 @@
 # Academic Research Agent Report
 
+This offline demonstration contains synthetic fixture records, not scholarly
+evidence. Its identifiers and fictional authors are used only for reproducible
+testing.
+
 **Research goal:** Explainable decisions in autonomous research agents
 
 **Evidence records retained:** 3

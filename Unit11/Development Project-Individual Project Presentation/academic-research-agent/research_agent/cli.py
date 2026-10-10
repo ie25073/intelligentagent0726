@@ -23,6 +23,9 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     arguments = build_parser().parse_args()
     project_root = Path(__file__).resolve().parent.parent
+    # Planner choice is made only at the application boundary so model-backed
+    # and deterministic planning remain interchangeable without changing the
+    # workflow or specialist-agent implementations.
     planner = (
         OllamaPlanner(model=arguments.model)
         if arguments.planner == "ollama"

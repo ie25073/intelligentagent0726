@@ -1,4 +1,5 @@
 {
+  "fixture_note": "Synthetic test data only. The DOI-shaped URLs in this offline demonstration are not registered scholarly DOIs and must not be treated as academic evidence.",
   "goal": "Explainable decisions in autonomous research agents",
   "result_count": 3,
   "works": [

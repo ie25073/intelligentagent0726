@@ -24,6 +24,9 @@ class StorageAgent:
             "works": [work.to_dict() for work in works],
         }
 
+        # Keep human-readable evidence, machine-readable evidence and the audit
+        # trace separate so each artefact can be reviewed or processed without
+        # conflating research results with the workflow decisions that produced them.
         json_path = output_directory / "research-report.json"
         markdown_path = output_directory / "research-report.md"
         trace_path = output_directory / "workflow-trace.json"
@@ -33,6 +36,8 @@ class StorageAgent:
         trace_path.write_text(
             json.dumps(trace.events, indent=2, ensure_ascii=False), encoding="utf-8"
         )
+        # Markdown is generated from the same normalised records written to JSON;
+        # this avoids having separate presentation logic invent or alter evidence.
         markdown_path.write_text(
             self._render_markdown(goal, works), encoding="utf-8"
         )

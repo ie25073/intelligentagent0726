@@ -1,0 +1,49 @@
+{
+  "goal": "Explainable decisions in autonomous research agents",
+  "iterations_per_mode": 10,
+  "measures": [
+    "valid schema runs",
+    "fallback runs",
+    "mean latency in milliseconds",
+    "95th-percentile latency in milliseconds"
+  ],
+  "limitation": "This is an operational planner benchmark, not a comparative benchmark of real Qwen, Mistral or Llama model quality. Real local-model benchmarking requires those models to be installed on the target host and should additionally record memory, context size and token throughput.",
+  "results": [
+    {
+      "mode": "rules",
+      "iterations": 10,
+      "valid_schema_runs": 10,
+      "fallback_runs": 0,
+      "mean_latency_ms": 0.003,
+      "p95_latency_ms": 0.007,
+      "note": "Deterministic baseline with no model dependency."
+    },
+    {
+      "mode": "mocked_ollama_valid",
+      "iterations": 10,
+      "valid_schema_runs": 10,
+      "fallback_runs": 0,
+      "mean_latency_ms": 0.079,
+      "p95_latency_ms": 0.554,
+      "note": "Simulates a schema-conforming Ollama response."
+    },
+    {
+      "mode": "mocked_ollama_invalid",
+      "iterations": 10,
+      "valid_schema_runs": 10,
+      "fallback_runs": 10,
+      "mean_latency_ms": 0.018,
+      "p95_latency_ms": 0.038,
+      "note": "Simulates malformed model output; fallback should activate."
+    },
+    {
+      "mode": "ollama_unavailable",
+      "iterations": 10,
+      "valid_schema_runs": 10,
+      "fallback_runs": 10,
+      "mean_latency_ms": 0.009,
+      "p95_latency_ms": 0.012,
+      "note": "Simulates missing local runtime; fallback should activate."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "scope": "Offline fixture ranking evaluation; not a live OpenAlex coverage benchmark.",
+  "identifier_type": "synthetic_fixture_identifier",
+  "identifier_note": "The identifiers used in this evaluation belong to synthetic fixture records. They are not registered scholarly DOIs and are included only for reproducible testing.",
+  "pass_targets": {
+    "expected_top_met": "true for all single-relevance cases",
+    "mean_precision_at_1": ">= 0.75",
+    "mean_ndcg_at_3": ">= 0.85"
+  },
+  "case_count": 4,
+  "mean_precision_at_1": 1.0,
+  "mean_precision_at_3": 0.5,
+  "mean_ndcg_at_3": 1.0,
+  "single_relevance_top_passed": true,
+  "cases": [
+    {
+      "query": "explainable planning autonomous research agents",
+      "relevant_fixture_identifiers": [
+        "10.1000/agent.1"
+      ],
+      "ranked_fixture_identifiers": [
+        "10.1000/agent.1",
+        "10.1000/agent.3",
+        "10.1000/agent.2"
+      ],
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "ndcg_at_3": 1.0,
+      "expected_top_met": true
+    },
+    {
+      "query": "evidence retrieval multi-agent systems evaluation",
+      "relevant_fixture_identifiers": [
+        "10.1000/agent.2"
+      ],
+      "ranked_fixture_identifiers": [
+        "10.1000/agent.2",
+        "10.1000/agent.1",
+        "10.1000/agent.3"
+      ],
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "ndcg_at_3": 1.0,
+      "expected_top_met": true
+    },
+    {
+      "query": "language model research assistants citation hallucination provenance",
+      "relevant_fixture_identifiers": [
+        "10.1000/agent.3"
+      ],
+      "ranked_fixture_identifiers": [
+        "10.1000/agent.3",
+        "10.1000/agent.1",
+        "10.1000/agent.2"
+      ],
+      "precision_at_1": 1.0,
+      "precision_at_3": 0.3333,
+      "ndcg_at_3": 1.0,
+      "expected_top_met": true
+    },
+    {
+      "query": "autonomous research agents evidence retrieval safety",
+      "relevant_fixture_identifiers": [
+        "10.1000/agent.1",
+        "10.1000/agent.2",
+        "10.1000/agent.3"
+      ],
+      "ranked_fixture_identifiers": [
+        "10.1000/agent.1",
+        "10.1000/agent.2",
+        "10.1000/agent.3"
+      ],
+      "precision_at_1": 1.0,
+      "precision_at_3": 1.0,
+      "ndcg_at_3": 1.0,
+      "expected_top_met": true
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 [
   {
+    "fixture_note": "Synthetic test data only. The DOI-shaped URL is not a registered scholarly DOI.",
     "id": "https://openalex.org/W1",
     "doi": "https://doi.org/10.1000/agent.1",
     "title": "Explainable planning for autonomous research agents",
@@ -13,6 +14,7 @@
     }
   },
   {
+    "fixture_note": "Synthetic test data only. The DOI-shaped URL is not a registered scholarly DOI.",
     "id": "https://openalex.org/W2",
     "doi": "https://doi.org/10.1000/agent.2",
     "title": "Evaluating evidence retrieval in multi-agent systems",
@@ -26,6 +28,7 @@
     }
   },
   {
+    "fixture_note": "Synthetic test data only. The DOI-shaped URL is not a registered scholarly DOI.",
     "id": "https://openalex.org/W3",
     "doi": "https://doi.org/10.1000/agent.3",
     "title": "Risks and limitations of language-model research assistants",

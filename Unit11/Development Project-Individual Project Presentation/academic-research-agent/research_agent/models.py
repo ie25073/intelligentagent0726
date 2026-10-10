@@ -4,6 +4,8 @@ from dataclasses import asdict, dataclass, field
 from typing import Any
 
 
+# Messages passed between specialist components are immutable so downstream
+# agents cannot silently change a plan or evidence record after it is created.
 @dataclass(frozen=True)
 class SearchTask:
     """A focused scholarly search delegated by the planning agent."""
@@ -38,6 +40,8 @@ class Work:
         return asdict(self)
 
 
+# The trace is deliberately mutable because it is an append-only audit record
+# that must accumulate decisions and failures as the workflow progresses.
 @dataclass
 class WorkflowTrace:
     """Inspectable state transitions captured during a workflow run."""

@@ -1,13 +1,20 @@
+Python 3.13.7
+
+Command: python3 -m unittest discover -s tests -v
+
 test_offline_command_completes_and_creates_all_outputs (test_cli.CommandLineFunctionalTests.test_offline_command_completes_and_creates_all_outputs) ... ok
 test_accepts_a_schema_conforming_model_plan (test_planner.OllamaPlannerTests.test_accepts_a_schema_conforming_model_plan) ... ok
 test_falls_back_when_the_model_is_unavailable (test_planner.OllamaPlannerTests.test_falls_back_when_the_model_is_unavailable) ... ok
 test_creates_bounded_distinct_tasks (test_planner.RuleBasedPlannerTests.test_creates_bounded_distinct_tasks) ... ok
 test_rejects_an_underspecified_goal (test_planner.RuleBasedPlannerTests.test_rejects_an_underspecified_goal) ... ok
+test_markdown_labels_identifiers_and_includes_note_near_top (test_retrieval_evaluation.RetrievalEvaluationTests.test_markdown_labels_identifiers_and_includes_note_near_top) ... ok
+test_metrics_and_expected_top_results_are_unchanged (test_retrieval_evaluation.RetrievalEvaluationTests.test_metrics_and_expected_top_results_are_unchanged) ... ok
+test_reports_plain_synthetic_identifiers (test_retrieval_evaluation.RetrievalEvaluationTests.test_reports_plain_synthetic_identifiers) ... ok
 test_deduplicates_records_retrieved_for_multiple_queries (test_workflow.ProcessingAgentTests.test_deduplicates_records_retrieved_for_multiple_queries) ... ok
 test_offline_run_persists_report_and_trace (test_workflow.ResearchWorkflowTests.test_offline_run_persists_report_and_trace) ... ok
 test_stops_after_configured_cycles_when_evidence_is_insufficient (test_workflow.ResearchWorkflowTests.test_stops_after_configured_cycles_when_evidence_is_insufficient) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 1.065s
+Ran 11 tests in 0.098s
 
 OK
