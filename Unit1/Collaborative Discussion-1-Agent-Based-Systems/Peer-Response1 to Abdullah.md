@@ -1,0 +1,13 @@
+Thank you, Abdullah, for your constructive observations. I agree that my initial post would have benefited from explaining the agent properties rather than simply listing them. Proactivity is particularly relevant to my argument about delegation because it enables an agent to take goal-directed initiative instead of merely reacting to environmental changes. When combined with autonomy, reactivity and social ability, this distinguishes an intelligent agent from conventional software that follows a predetermined sequence of instructions (Wooldridge and Jennings, 1995).
+
+Your point about empirical support is also well founded. I referred broadly to supply chains, financial trading and telecommunications without demonstrating how organisations have used agent-based approaches in practice. Jennings (2000) provides stronger support by discussing applications in areas including industrial process control and business process management. Including a specific example would therefore have made the claimed organisational benefits more convincing and prevented the paragraph from appearing overly general.
+
+I also accept the need for a more balanced discussion of limitations. Autonomy and decentralisation can improve adaptability and resilience, but interactions among agents may produce coordination overhead, conflicting goals or unexpected emergent behaviour. These risks suggest that organisational adoption should include explicit interaction protocols, defined limits on agent authority, auditable decision logs and continuous monitoring. For high-impact decisions, human approval and override mechanisms should remain available. Such controls can preserve useful autonomy while maintaining accountability.
+
+Your feedback has therefore refined my original conclusion: agent-based systems are increasingly valuable, but their suitability depends on whether autonomy, coordination and governance are designed together. Do you think human oversight should be mandatory for every multi-agent system, or only where agent decisions could cause significant financial, safety or ethical consequences?
+
+References
+
+Jennings, N.R. (2000) 'On agent-based software engineering', Artificial Intelligence, 117(2), pp. 277-296. Available at: https://www.sciencedirect.com/science/article/pii/S0004370299001071?via%3Dihub (Accessed: 11 August 2026).
+
+Wooldridge, M.J. and Jennings, N.R. (1995) 'Intelligent agents: theory and practice', The Knowledge Engineering Review, 10(2), pp. 115-152. Available at: https://www.cambridge.org/core/journals/knowledge-engineering-review/article/abs/intelligent-agents-theory-and-practice/CF2A6AAEEA1DBD486EF019F6217F1597 (Accessed: 11 August 2026).

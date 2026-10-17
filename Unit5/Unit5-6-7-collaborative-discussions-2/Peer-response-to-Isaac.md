@@ -6,7 +6,6 @@ Several measures could reduce this risk. First, a system could adopt a small, ve
 
 Your discussion of newer protocols is useful because it shows that the interoperability problem remains current. I think the strongest architectural response is therefore layered: use ACLs between independently governed agents, but retain ordinary methods within each agent for deterministic operations. This limits semantic and messaging overhead without sacrificing autonomy at the points where it matters. Would you also make ontology-version negotiation a mandatory opening stage of every inter-agent conversation, or only when the agents have not interacted before?
 
-**Word count: 267**
 
 ## References
 

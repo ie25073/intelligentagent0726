@@ -10,7 +10,6 @@ Your feedback therefore strengthens my hybrid proposal: ordinary methods would h
 
 Would you favour a shared core ontology with negotiated extensions, or local ontologies aligned only when agents need to interact?
 
-**Word count: 247 (excluding heading and references)**
 
 ## References
 

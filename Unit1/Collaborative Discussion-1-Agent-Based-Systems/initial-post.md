@@ -10,8 +10,6 @@ Organisations benefit considerably from this paradigm. Agent-based systems enabl
 
 In summary, the convergence of technological trends demanding intelligence and autonomy in software has made agent-based systems not merely useful, but increasingly essential for modern organisations.
 
-**Word count: 217**
-
 ---
 
 ## References

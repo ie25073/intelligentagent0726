@@ -8,7 +8,6 @@ I would therefore strengthen your hybrid design with an explicit interaction con
 
 Your practical boundary is convincing because it bases the choice on autonomy rather than physical distribution. Would you treat a frequently repeated reformulation as evidence that it should become a deterministic local method, or retain it as agent work because its interpretation remains context-dependent?
 
-**Word count: 272**
 
 ## References
 
